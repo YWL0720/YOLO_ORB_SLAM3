@@ -30,6 +30,15 @@ chmod +x build_ros.sh
 ./build_ros.sh
 ```
 
+Only the RGBD target has been improved.
+
+The frequency of camera topic must be lower than 15 Hz.
+
+You can run this command to change the frequency of topic which published by the camera driver. 
+```bash
+roslaunch YOLO_ORB_SLAM3 camera_topic_remap.launch
+```
+
 ---
 
 # ORB-SLAM3

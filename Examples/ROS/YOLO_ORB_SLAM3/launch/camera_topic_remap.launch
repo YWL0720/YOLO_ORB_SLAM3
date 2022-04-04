@@ -1,0 +1,5 @@
+<launch>
+	<node pkg="topic_tools" name="topic_1" type="throttle" args="messages camera/rgb/image_raw 15 camera/rgb/image_raw_low"/>
+	<node pkg="topic_tools" name="topic_2" type="throttle" args="messages camera/depth_registered/image_raw 15 camera/depth_registered/image_raw_low"/>
+</launch>
+
