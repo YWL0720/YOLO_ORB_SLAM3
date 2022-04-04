@@ -1,6 +1,6 @@
 <package>
-  <description brief="ORB_SLAM3">
-     ORB_SLAM3
+  <description brief="YOLO_ORB_SLAM3">
+     YOLO_ORB_SLAM3
   </description>
   <author>Carlos Campos, Richard Elvira, Juan J. Gomez, Jose M.M. Montiel, Juan D. Tardos</author>
   <license>GPLv3</license>
