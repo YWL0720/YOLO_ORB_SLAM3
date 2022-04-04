@@ -15,6 +15,20 @@ chmod +x build.sh
 
 Only the rgbd_tum target will be build.
 
+### 3. Build ROS Examples
+Add the path including *Examples/ROS/YOLO_ORB_SLAM3* to the ROS_PACKAGE_PATH environment variable. Open .bashrc file:
+```bash
+gedit ~/.bashrc
+```
+and add at the end the following line. Replace PATH by the folder where you cloned YOLO_ORB_SLAM3:
+```bash
+export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/YOLO_ORB_SLAM3/Examples/ROS
+```
+Then build
+```bash
+chmod +x build_ros.sh
+./build_ros.sh
+```
 
 ---
 
