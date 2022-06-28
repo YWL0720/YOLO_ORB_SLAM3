@@ -40,7 +40,7 @@ add_definitions(-w)
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 set(CMAKE_PREFIX_PATH ${PROJECT_SOURCE_DIR}/Thirdparty/libtorch)
 
-find_package(OpenCV 4.4)
+find_package(OpenCV 4.2)
 if(NOT OpenCV_FOUND)
     message(FATAL_ERROR "OpenCV > 4.4 not found.")
 endif()

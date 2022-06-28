@@ -30,6 +30,12 @@ public:
     torch::jit::script::Module mModule;
     std::vector<std::string> mClassnames;
 
+    // 6-28
+    vector<string> mvDynamicNames;
+    vector<cv::Rect2i> mvDynamicArea;
+    map<string, vector<cv::Rect2i>> mmDetectMap;
+
+
 };
 
 

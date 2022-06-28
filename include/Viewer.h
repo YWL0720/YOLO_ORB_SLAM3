@@ -66,6 +66,9 @@ public:
     bool both;
 
     std::vector<cv::Rect2i> mvPersonArea;
+    map<string, vector<cv::Rect2i>> mmDetectMap;
+
+
     std::mutex mMutexPAFinsh;
 
 private:

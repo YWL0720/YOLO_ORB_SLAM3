@@ -880,7 +880,7 @@ namespace ORB_SLAM3
                     bool Find = false;
                     for (auto vit_kp = vToDistributeKeys.begin(); vit_kp != vToDistributeKeys.end();)
                     {
-                        for (auto vit_area = mvPersonArea.begin(); vit_area != mvPersonArea.end(); vit_area++)
+                        for (auto vit_area = mvDynamicArea.begin(); vit_area != mvDynamicArea.end(); vit_area++)
                         {
                             Find = false;
                             if (vit_area->contains(vit_kp->pt))

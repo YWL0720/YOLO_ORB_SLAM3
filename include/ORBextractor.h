@@ -81,7 +81,7 @@ public:
     }
 
     std::vector<cv::Mat> mvImagePyramid;
-    std::vector<cv::Rect2i> mvPersonArea;
+    std::vector<cv::Rect2i> mvDynamicArea;
 
 protected:
 

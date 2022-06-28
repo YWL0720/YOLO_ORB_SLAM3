@@ -1532,13 +1532,13 @@ Sophus::SE3f Tracking::GrabImageRGBD(const cv::Mat &imRGB,const cv::Mat &imD, co
     InputImage = imRGB.clone();
     mpDetector->GetImage(InputImage);
     mpDetector->Detect();
-    mpORBextractorLeft->mvPersonArea = mpDetector->mvPersonArea;
+    mpORBextractorLeft->mvDynamicArea = mpDetector->mvDynamicArea;
     {
         std::unique_lock<std::mutex> lock(mpViewer->mMutexPAFinsh);
-        mpViewer->mvPersonArea = mpDetector->mvPersonArea;
+        mpViewer->mmDetectMap = mpDetector->mmDetectMap;
     }
-    mpDetector->mvPersonArea.clear();
-
+    mpDetector->mvDynamicArea.clear();
+    mpDetector->mmDetectMap.clear();
 
     if(mImGray.channels()==3)
     {

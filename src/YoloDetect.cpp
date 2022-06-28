@@ -13,6 +13,8 @@ YoloDetection::YoloDetection()
     {
         mClassnames.push_back(name);
     }
+    mvDynamicNames = {"person", "car", "motorbike", "bus", "train", "truck", "boat", "bird", "cat",
+                      "dog", "horse", "sheep", "crow", "bear"};
 }
 
 YoloDetection::~YoloDetection()
@@ -54,17 +56,21 @@ bool YoloDetection::Detect()
             float bottom = dets[0][i][3].item().toFloat() * mRGB.rows / 384;
             int classID = dets[0][i][5].item().toInt();
 
-            if (mClassnames[classID] == "person")
+
+            cv::Rect2i DetectArea(left, top, (right - left), (bottom - top));
+            mmDetectMap[mClassnames[classID]].push_back(DetectArea);
+
+            if (count(mvDynamicNames.begin(), mvDynamicNames.end(), mClassnames[classID]))
             {
-                cv::Rect2i PersonArea(left, top, (right - left), (bottom - top));
-                mvPersonArea.push_back(PersonArea);
+                cv::Rect2i DynamicArea(left, top, (right - left), (bottom - top));
+                mvDynamicArea.push_back(DynamicArea);
             }
 
         }
-        if (mvPersonArea.size() == 0)
+        if (mvDynamicArea.size() == 0)
         {
-            cv::Rect2i tPersonArea(1, 1, 1, 1);
-            mvPersonArea.push_back(tPersonArea);
+            cv::Rect2i tDynamicArea(1, 1, 1, 1);
+            mvDynamicArea.push_back(tDynamicArea);
         }
     }
     return true;
