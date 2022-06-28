@@ -3,10 +3,7 @@ Combine YOLOv5 with ORB-SLAM3
 - Object Detect
 - Dynamic SLAM
 
-<figure class="half">
-    <img src="https://raw.githubusercontent.com/YWL0720/YOLO_ORB_SLAM3/master/Fig1.png">
-    <img src="https://raw.githubusercontent.com/YWL0720/YOLO_ORB_SLAM3/master/Fig2.png">
-</figure>
+![Fig](https://raw.githubusercontent.com/YWL0720/YOLO_ORB_SLAM3/master/Fig.png)
 
 
 ## Geting Started
