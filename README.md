@@ -3,8 +3,8 @@ Combine YOLOv5 with ORB-SLAM3
 - Object Detect
 - Dynamic SLAM
 
-![Fig1](/home/yuwenlu/MyCode/Fig1.png)
-![Fig2](/home/yuwenlu/MyCode/Fig2.png)
+![Fig1](https://raw.githubusercontent.com/YWL0720/YOLO_ORB_SLAM3/master/Fig1.png)
+![Fig2](https://raw.githubusercontent.com/YWL0720/YOLO_ORB_SLAM3/master/Fig2.png)
 ## Geting Started
 ### 1. Install libtorch
 ```bash
