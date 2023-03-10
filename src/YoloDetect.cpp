@@ -5,6 +5,7 @@
 
 YoloDetection::YoloDetection()
 {
+    torch::jit::setTensorExprFuserEnabled(false);
     mModule = torch::jit::load("yolov5s.torchscript.pt");
 
     std::ifstream f("coco.names");
@@ -42,7 +43,7 @@ bool YoloDetection::Detect()
     imgTensor = imgTensor.div(255);
     imgTensor = imgTensor.unsqueeze(0);
 
-    // preds: [?, 15120, 9]
+
     torch::Tensor preds = mModule.forward({imgTensor}).toTuple()->elements()[0].toTensor();
     std::vector<torch::Tensor> dets = YoloDetection::non_max_suppression(preds, 0.4, 0.5);
     if (dets.size() > 0)
@@ -130,7 +131,7 @@ vector<torch::Tensor> YoloDetection::non_max_suppression(torch::Tensor preds, fl
             }
             torch::Tensor overlaps = widths * heights;
 
-            // FIlter by IOUs
+
             torch::Tensor ious = overlaps / (areas.select(0, indexes[0].item().toInt()) + torch::index_select(areas, 0, indexes.slice(0, 1, indexes.sizes()[0])) - overlaps);
             indexes = torch::index_select(indexes, 0, torch::nonzero(ious <= iou_thresh).select(1, 0) + 1);
         }

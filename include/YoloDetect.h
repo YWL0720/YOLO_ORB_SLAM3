@@ -10,7 +10,7 @@
 #include <iostream>
 #include <utility>
 #include <time.h>
-
+#include <torch/csrc/jit/passes/tensorexpr_fuser.h>
 using namespace std;
 
 class YoloDetection
