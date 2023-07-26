@@ -4,8 +4,11 @@
 - Object Detection
 - Dynamic SLAM
 
-![Fig](https://raw.githubusercontent.com/YWL0720/YOLO_ORB_SLAM3/master/Fig.png)
-
+<p align="center">
+  <img src="Fig.png"/>
+  <br>
+  <em>Fig 1 : Test with TUM dataset</em>
+</p>
 
 ## Getting Started
 ### 0. Prerequisites
